@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Newsletter</title>
+    <style>
+        /* Reset styles to ensure consistency across email clients */
+        body,
+        p,
+        h1,
+        h2,
+        h3,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            /* Light gray background color */
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        /* Define CSS for the newsletter layout */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            /* White background color */
+            border: 1px solid #e0e0e0;
+            /* Light gray border */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            /* Add a subtle shadow effect */
+        }
+
+        .header {
+            background-color: #63BFF4;
+            padding: 20px;
+            color: #fff;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            /* Add a shadow effect to the header text */
+        }
+
+        .headers {
+            color: #63BFF4;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .content img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            /* Add a subtle shadow effect to images */
+        }
+
+        .news-header {
+            margin-bottom: 5px;
+            margin-top: 5px;
+        }
+
+        .news-item {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #e0e0e0;
+            /* Light gray border between news items */
+            padding-bottom: 20px;
+            /* Add some space between news items */
+        }
+
+        .news-item a {
+            font-size: 20px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .news-item a:hover {
+            /* text-decoration: underline; */
+            /* Underline on hover for links */
+        }
+
+        .events {
+            padding: 20px;
+            color: #333;
+            /* Darker text color for events */
+        }
+
+        .events h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .event-item {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f5f5f5;
+            /* Light gray background for event item */
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            /* Add a subtle shadow effect */
+        }
+
+        .event-item h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .event-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .learn-more-btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #63BFF4;
+            /* Primary color for button */
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 17px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .learn-more-btn:hover {
+            background-color: #4FA4D6;
+            /* Darker color on hover */
+        }
+
+        .learn-more-news-btn {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #63BFF4;
+            /* Primary color for button */
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 15px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .learn-more-news-btn:hover {
+            background-color: #4FA4D6;
+            /* Darker color on hover */
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 10px;
+            border-top: 1px solid #e0e0e0;
+            /* Light gray border for footer */
+            color: #888;
+            /* Lighter text color for footer */
+        }
+
+        .footer a {
+            color: #63BFF4;
+            /* Use the primary color for footer links */
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+            /* Underline on hover for footer links */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Title of Newsletter</h1>
+            <h3>September Spotlight 1.0</h3>
+
+        </div>
+
+        <!-- Tech News section -->
+        <div class="content">
+            <h2 class="headers">Tech News</h2>
+            <br />
+            <div class="">
+                <h3 class="news-header">BigQuery Breaking News — Generative AI</h3>
+                <p>In recent months, the entire world, particularly the tech community, has been captivated by
+                    Generative AI
+                    models, including LLM. GDE and Cloud Camption communities are no exception, as we delve into
+                    exploring new GCP
+                    Vertex AI models and prepare to share the details.</p>
+                <a class="learn-more-news-btn"
+                    href="https://medium.com/google-cloud/bigquery-breaking-news-generative-ai-8c6d14bd4568">Learn
+                    more</a>
+            </div>
+            <div class="">
+                <h3 class="news-header">Pfizer Uses Serverless Architecture</h3>
+                <p>Pfizer upgraded the serverless architecture for processing digital biomarker data at scale to make it
+                    more
+                    flexible and configurable.</p>
+                <a class="learn-more-news-btn"
+                    href="https://www.infoq.com/news/2023/07/pfizer-serverless-biomarkers/">Learn
+                    more</a>
+            </div>
+            <div class="">
+                <h3 class="news-header">GameOver(lay): Two Severe Linux Vulnerabilities</h3>
+                <p>Cybersecurity researchers have disclosed two high-severity security flaws in the Ubuntu kernel that
+                    could
+                    pave the way for local privilege escalation attacks.</p>
+                <a class="learn-more-news-btn"
+                    href="https://thehackernews.com/2023/07/gameoverlay-two-severe-linux.html">Learn
+                    more</a>
+            </div>
+        </div>
+        <!-- Write-ups section -->
+        <div class="content">
+            <h2 class="headers">Featured Write-ups</h2>
+            <br />
+            <ul class="news-list">
+                <li class="news-item"><a
+                        href="https://medium.com/geekculture/introduction-to-aws-ec2-related-services-and-cli-cfbae53c3409">Introduction
+                        to AWS: EC2, related services, and AWS through the CLI</a></li>
+                <li class="news-item"><a href="https://willthompson.name/what-we-know-about-llms-primer">What We Know
+                        About
+                        LLMs</a></li>
+                <li class="news-item"><a href="https://twitter.com/terhavlova/status/1684265329277403149">How I made a
+                        Barbie
+                        video using only Al.</a></li>
+                <li class="news-item"><a href="https://beebom.com/what-is-bash-script-linux/">What is a Bash Script and
+                        How to
+                        Write It in Linux</a></li>
+                <li class="news-item"><a href="https://www.evanmiller.org/attention-is-off-by-one.html">Attention Is Off
+                        By
+                        One</a></li>
+            </ul>
+        </div>
+        <!-- Events section -->
+        <div class="content">
+            <h2 class="headers">Upcoming Events</h2>
+            <br />
+            <div class="event-item">
+                <h3>Cloud Native Ahmedabad: Monitoring and Helm Special</h3>
+                <img src="https://res.cloudinary.com/startup-grind/image/upload/dpr_2.0,fl_sanitize/v1/gcs/platform-data-cncf/contentbuilder/CNCF%20Community%20Groups%20Logo_2023_1800x1000.svg"
+                    alt="Cloud Native Ahmedabad: Monitoring and Helm Special" />
+                <p>Join the Cloud Native Ahmedabad meetup and embark on a journey through the cutting-edge realm of
+                    Cloud Native
+                    Computing!</p>
+                <a class="learn-more-btn"
+                    href="https://community.cncf.io/events/details/cncf-ahmedabad-presents-cloud-native-ahmedabad-monitoring-and-helm-special/">Learn
+                    more</a>
+            </div>
+            <div class="event-item">
+                <h3>AWS Community Day Ahmedabad - Security Edition</h3>
+                <img src="https://secure.meetupstatic.com/photos/event/8/8/b/5/600_515194997.webp"
+                    alt="AWS Community Day Ahmedabad - Security Edition" />
+                <p>This one full day PAID in person premium event is your gateway to understanding, implementing, and
+                    optimizing
+                    robust security measures within the AWS ecosystem.</p>
+                <a class="learn-more-btn" href="https://securityday.awsahmedabad.community/">Learn more</a>
+            </div>
+        </div>
+        <!-- Memes section -->
+        <div class="content">
+            <h2 class="headers">Memes of the Week</h2>
+            <br />
+            <div class="news-item">
+                <img src="https://s7280.pcdn.co/wp-content/uploads/2019/07/AWS-meme-300x226.png" alt="Meme" />
+                <p>Always overkill!</p>
+            </div>
+            <div class="news-item">
+                <img src="https://s7280.pcdn.co/wp-content/uploads/2019/07/computer-facts-300x206.png" alt="Meme" />
+                <p>Because that's how it works</p>
+            </div>
+        </div>
+        <div class="content">
+            <h2 class="headers">Contributors</h2>
+            <br />
+            <p>21CS068 - Het Soni</p>
+            <p>21CE031 - Dulari Bhushan</p>
+        </div>
+        <a class="learn-more-btn"
+            href="https://docs.google.com/forms/d/e/1FAIpQLScmQeeVDTH3ImTfQcjJi9vZVSoqnMZDGu8sXFqqxqO7Efd5_A/viewform?usp=sf_link">
+            Feedback
+        </a>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="learn-more-btn"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeR8rc6UBingyPWqhNF3NZFA8wk3MWs6Kmda10sn_NTyfzUfw/viewform?usp=sf_link">
+            Contribution
+        </a>
+    </div>
+</body>
+
+</html>

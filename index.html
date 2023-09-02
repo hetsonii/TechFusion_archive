@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter Archive</title>
+    <style>
+        /* Style for the grid container */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            /* Responsive grid */
+            gap: 20px;
+        }
+
+        /* Style for each thumbnail */
+        .thumbnail {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Style for the iframe container */
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            height: 350px;
+            /* Increased height for mobile devices */
+            overflow: hidden;
+            /* Hide scrollbars */
+        }
+
+        /* Style for the iframe */
+        .thumbnail iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            overflow: hidden;
+            /* Hide scrollbars within the iframe */
+        }
+
+        /* Style for the filename links */
+        .filename {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            text-decoration: none;
+            font-family: "Arial", sans-serif;
+            /* Change the font as needed */
+            color: #3366cc;
+            /* Change the color as needed */
+            font-size: 18px;
+            /* Adjust the font size as needed */
+        }
+
+        /* Media query for mobile devices */
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+                /* Single column layout for mobile devices */
+            }
+
+            .iframe-container {
+                height: 350px;
+                /* Increased height for mobile devices */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Newsletter Archive</h1>
+
+    <div class="grid-container" id="newsletter-grid">
+        <!-- Thumbnails will be added dynamically here -->
+    </div>
+
+    <script>
+        // Function to fetch the list of HTML files in the 'archive' folder
+        async function fetchNewsletterList() {
+            const response = await fetch('archive/');
+            const data = await response.text();
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(data, 'text/html');
+            const links = Array.from(htmlDoc.querySelectorAll('a[href$=".html"]'));
+            return links.map(link => link.getAttribute('href'));
+        }
+
+        // Function to create and display thumbnails with iframes and filenames
+        async function displayThumbnails() {
+            const newsletterList = await fetchNewsletterList();
+            const gridContainer = document.getElementById('newsletter-grid');
+
+            newsletterList.forEach(file => {
+                const thumbnail = document.createElement('div');
+                thumbnail.classList.add('thumbnail');
+
+                const iframeContainer = document.createElement('div');
+                iframeContainer.classList.add('iframe-container');
+
+                const iframe = document.createElement('iframe');
+                iframe.src = `${file}`; // Corrected path
+                iframe.style.overflow = 'hidden'; // Hide scrollbar within the iframe
+
+                const filenameLink = document.createElement('a');
+                filenameLink.classList.add('filename');
+                filenameLink.href = `${file}`;
+                filenameLink.textContent = decodeURIComponent(file.replace(/^.*[\\\/]/, '').replace(/\.[^/.]+$/, '')); // Extract just the filename and decode URL encoding
+
+                iframeContainer.appendChild(iframe);
+                thumbnail.appendChild(iframeContainer);
+                thumbnail.appendChild(filenameLink);
+                gridContainer.appendChild(thumbnail);
+            });
+        }
+
+        // Call the function to display thumbnails
+        displayThumbnails();
+    </script>
+</body>
+
+</html>
